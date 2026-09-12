@@ -2161,13 +2161,13 @@
                             alt="Agricultural machine 16"
                             loading="lazy">
 
-                        <span class="machine-number">02</span>
+                        <span class="machine-number">14</span>
 
                     </div>
 
                     <div class="machine-content">
 
-                        <h3>Machine Model 02</h3>
+                        <h3>Machine Model 14</h3>
 
                         <p>
                             मुख्य नाम: सुपर सीडर, कॉम्बिनेशन सीडर (Super Seeder Machine)<br>
@@ -2207,12 +2207,12 @@
                 </div>
 
                 <h2 class="section-title">
-                    Find Us Near You.
+                    अब आपके पास...
                 </h2>
 
                 <p class="section-description">
-                    Santosh Super Krishi Yantra operates from two
-                    locations in Madhya Pradesh.
+                    संतोष सुपर कृषि यंत्र मध्य प्रदेश की एक विश्वसनीय कृषि यंत्र निर्माता कंपनी है।हमारी मध्य प्रदेश में 2 शाखाएँ हैं, जहाँ से हम किसानों को उत्तम गुणवत्ता के कृषि यंत्र उपलब्ध कराते हैं।<BR>
+                    हमारा उद्देश्य है - किसानों को कम कीमत में टिकाऊ, मजबूत और आधुनिक तकनीक वाली मशीनें देना, ताकि खेती आसान और अधिक लाभदायक बन सके।
                 </p>
 
             </div>
@@ -2275,7 +2275,7 @@
                                 Branch 02
                             </div>
 
-                            <h3>Amala</h3>
+                            <h3>Amla</h3>
 
                         </div>
 
@@ -2285,7 +2285,7 @@
 
                     <p class="location-address">
 
-                        Amala, District Betul,
+                        Amla toranbada, District Betul,
                         Madhya Pradesh, India.
 
                     </p>
@@ -2403,7 +2403,9 @@
 
                 <h3>Send An Enquiry</h3>
 
-                <form id="contactForm">
+                <form id="contactForm"
+                    action="" 
+                    method="POST">
 
                     <div class="form-group">
 
@@ -2411,6 +2413,7 @@
 
                         <input type="text"
                             id="name"
+                             name="name"
                             placeholder="Enter your name"
                             required>
 
@@ -2423,6 +2426,7 @@
 
                         <input type="email"
                             id="email"
+                            name="email"
                             placeholder="Enter your email"
                             required>
 
@@ -2435,6 +2439,7 @@
 
                         <input type="tel"
                             id="phone"
+                            name="phone"
                             placeholder="Enter your phone number">
 
                     </div>
@@ -2445,6 +2450,7 @@
                         <label for="message">Your Requirement</label>
 
                         <textarea id="message"
+                            name="message"
                             placeholder="Tell us about your machine requirement..."
                             required></textarea>
 
@@ -2456,7 +2462,7 @@
                     </button>
 
                     <p class="form-note">
-                        Your enquiry will open in your email application.
+                        Your enquiry will be sent to our bussiness email.
                     </p>
 
                 </form>
@@ -2565,38 +2571,9 @@
         });
 
 
-        // Contact form opens email application
+        //// Contact form is handled by Formspree
 
-        const contactForm = document.getElementById("contactForm");
-
-        contactForm.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-            const message = document.getElementById("message").value;
-
-            const subject = encodeURIComponent(
-                "New Business Enquiry - Santosh Super Krishi Yantra"
-            );
-
-            const body = encodeURIComponent(
-
-                "Name: " + name + "\n" +
-                "Email: " + email + "\n" +
-                "Phone: " + phone + "\n\n" +
-                "Requirement:\n" + message
-
-            );
-
-            window.location.href =
-                "mailto:santoshkurmikhurai@gmail.com" +
-                "?subject=" + subject +
-                "&body=" + body;
-
-        });
+const contactForm = document.getElementById("contactForm");
 
 
         // Current year
