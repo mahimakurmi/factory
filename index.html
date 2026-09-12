@@ -1026,7 +1026,352 @@
                 grid-template-columns: 1fr;
             }
         }
+/* =========================================
+   NEW FACTORY OWNER HERO DESIGN
+========================================= */
 
+.hero {
+    min-height: 100vh;
+    padding-top: 78px;
+
+    background:
+        linear-gradient(
+            115deg,
+            #06162d 0%,
+            #0b2545 55%,
+            #123c68 100%
+        );
+
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+    pointer-events: none;
+}
+
+.hero-container {
+    min-height: calc(100vh - 78px);
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.95fr)
+        minmax(0, 1.05fr);
+
+    align-items: center;
+
+    gap: 55px;
+
+    position: relative;
+    z-index: 1;
+
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.hero-content {
+    min-width: 0;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    color: #83c4ff;
+    margin-bottom: 25px;
+}
+
+.hero-label::before {
+    content: "";
+
+    width: 28px;
+    height: 2px;
+
+    background: #3da5ff;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 4.2vw, 62px);
+
+    letter-spacing: -2px;
+    line-height: 1.12;
+
+    margin-bottom: 10px;
+    color: white;
+}
+
+.hero h1 span {
+    display: block;
+    color: #66baff;
+}
+
+.hero-hindi {
+    font-family: "Noto Sans Devanagari",
+                 "Nirmala UI",
+                 sans-serif;
+
+    font-size: 18px;
+    font-weight: 500;
+
+    color: #b9d7ef;
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    color: #bdcede;
+
+    max-width: 470px;
+    font-size: 16px;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero .btn-outline {
+    color: white;
+    border-color: #6e8da9;
+}
+
+.hero .btn-outline:hover {
+    background: white;
+    color: var(--navy);
+}
+
+
+/* =========================================
+   OWNERS CARDS
+========================================= */
+
+.owners-section {
+    width: 100%;
+    min-width: 0;
+}
+
+.owners-heading {
+    margin-bottom: 25px;
+}
+
+.owners-heading span {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #83c4ff;
+}
+
+.owners-heading h2 {
+    font-size: 28px;
+    margin-top: 8px;
+    color: white;
+}
+
+.owners-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.owner-card {
+    background: rgba(255,255,255,0.07);
+
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.owner-card:hover {
+    transform: translateY(-8px);
+
+    background: rgba(255,255,255,0.11);
+    border-color: #4fa9ef;
+}
+
+.owner-photo {
+    width: 100%;
+    height: 245px;
+
+    background: #193653;
+    overflow: hidden;
+}
+
+.owner-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.owner-card:hover .owner-photo img {
+    transform: scale(1.05);
+}
+
+.owner-details {
+    padding: 20px;
+}
+
+.owner-role {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #7ec5ff;
+}
+
+.owner-details h3 {
+    font-size: 19px;
+    color: white;
+
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+.owner-position {
+    font-size: 12px;
+    color: #b6c9dc;
+
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.owner-stats {
+    display: flex;
+    gap: 20px;
+
+    padding-top: 16px;
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.owner-stats strong {
+    display: block;
+
+    font-size: 25px;
+    color: white;
+}
+
+.owner-stats span {
+    display: block;
+
+    font-size: 9px;
+    color: #a9bfd3;
+    margin-top: 3px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .hero-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .owners-grid {
+        gap: 12px;
+    }
+
+    .owner-photo {
+        height: 210px;
+    }
+
+    .owner-details {
+        padding: 15px;
+    }
+
+    .owner-details h3 {
+        font-size: 17px;
+    }
+
+}
+
+@media (max-width: 850px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .owners-section {
+        max-width: 650px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding-top: 70px;
+    }
+
+    .hero-container {
+        min-height: auto;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-hindi {
+        font-size: 16px;
+    }
+
+    .owners-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .owner-photo {
+        height: 280px;
+    }
+
+    .owner-details {
+        padding: 20px;
+    }
+
+}
     </style>
 </head>
 
@@ -1071,87 +1416,154 @@
 
     </header>
 
+<!-- =========================
+     HERO SECTION
+========================= -->
 
-    <!-- =========================
-         HERO SECTION
-    ========================= -->
+<section class="hero" id="home">
 
-    <section class="hero" id="home">
+    <div class="container hero-container">
 
-        <div class="container hero-container">
+        <!-- LEFT SIDE -->
 
-            <div class="hero-content reveal">
+        <div class="hero-content reveal">
 
-                <div class="hero-label">
-                    Agricultural Machinery Manufacturer
-                </div>
-
-                <h1>
-                    Engineering Better
-                    <span>Farming.</span>
-                </h1>
-
-                <p class="hero-description">
-                    Welcome to Santosh Super Krishi Yantra — dedicated to
-                    agricultural machinery and practical engineering solutions
-                    for modern farming.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#machines" class="btn btn-primary">
-                        Explore Machines →
-                    </a>
-
-                    <a href="#contact" class="btn btn-outline">
-                        Contact Factory
-                    </a>
-
-                </div>
-
-                <div class="hero-stats">
-
-                    <div class="hero-stat">
-                        <strong>13+</strong>
-                        <span>Machine Models</span>
-                    </div>
-
-                    <div class="hero-stat">
-                        <strong>02</strong>
-                        <span>Factory Locations</span>
-                    </div>
-
-                    <div class="hero-stat">
-                        <strong>01</strong>
-                        <span>Trusted Business</span>
-                    </div>
-
-                </div>
-
+            <div class="hero-label">
+                AGRICULTURAL MACHINERY MANUFACTURER
             </div>
 
-            <div class="hero-visual reveal">
+            <h1>
+                Santosh Super
+                <span>Krishi Yantra</span>
+            </h1>
 
-                <div class="hero-image">
+            <p class="hero-hindi">
+                संतोष सुपर कृषि यंत्र
+            </p>
 
-                    <img src="images/3.jpg"
-                        alt="Agricultural machinery at Santosh Super Krishi Yantra"
-                        onerror="this.src='images/4.jpg'">
+            <p class="hero-description">
+                Agricultural machinery manufacturing and engineering
+                solutions for modern farming.
+            </p>
 
-                </div>
+            <div class="hero-buttons">
 
-                <div class="hero-badge">
+                <a href="#machines" class="btn btn-primary">
+                    Explore Machines →
+                </a>
 
-                    <strong>Santosh Super</strong>
-                    <span>Krishi Yantra</span>
-
-                </div>
+                <a href="#contact" class="btn btn-outline">
+                    Contact Factory
+                </a>
 
             </div>
 
         </div>
 
-    </section>
+
+        <!-- RIGHT SIDE: OWNERS -->
+
+        <div class="owners-section reveal">
+
+            <div class="owners-heading">
+
+                <span>OUR LEADERSHIP</span>
+
+                <h2>Meet The Owners</h2>
+
+            </div>
+
+
+            <div class="owners-grid">
+
+
+                <!-- OWNER 1 -->
+
+                <div class="owner-card">
+
+                    <div class="owner-photo">
+
+                        <img src="photo.1.jpeg"
+                             alt="Mr. Santosh Kurmi">
+
+                    </div>
+
+                    <div class="owner-details">
+
+                        <span class="owner-role">
+                            FOUNDER
+                        </span>
+
+                        <h3>Mr. Santosh Kurmi</h3>
+
+                        <p class="owner-position">
+                            Founder of Santosh Super Krishi Yantra
+                        </p>
+
+                        <div class="owner-stats">
+
+                            <div>
+                                <strong>25+</strong>
+                                <span>Years Experience</span>
+                            </div>
+
+                            <div>
+                                <strong>500+</strong>
+                                <span>Happy Customers</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OWNER 2 -->
+
+                <div class="owner-card">
+
+                    <div class="owner-photo">
+
+                        <img src="photo.2.jpeg"
+                             alt="Mr. Neelesh Kurmi">
+
+                    </div>
+
+                    <div class="owner-details">
+
+                        <span class="owner-role">
+                            CO-FOUNDER
+                        </span>
+
+                        <h3>Mr. Neelesh Kurmi</h3>
+
+                        <p class="owner-position">
+                            Co-Founder of Santosh Super Krishi Yantra
+                        </p>
+
+                        <div class="owner-stats">
+
+                            <div>
+                                <strong>10+</strong>
+                                <span>Years Experience</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 
     <!-- =========================
